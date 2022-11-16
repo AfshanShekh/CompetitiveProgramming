@@ -10,8 +10,6 @@ struct SegTree
           st.resize(4 * N + 5);
      }
 
-     
-
      void Build(int node, int L, int R)
      {
           if (L == R)
@@ -50,16 +48,11 @@ struct SegTree
           int M = (L + R) / 2; 
           return max(Query(node * 2, L, M, i, j), Query(node * 2 + 1, M + 1, R, i, j));
           
-     }
-
-     
+     }  
 
      int query(int l, int r) { return Query(1, 1, N, l, r); }
-
      void update(int pos, int val) { Update(1, 1, N, pos, val); }
-
      void build() { Build(1, 1, N); }
-
 };
 
 SegTree seg;
